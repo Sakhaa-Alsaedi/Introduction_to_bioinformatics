@@ -11,7 +11,7 @@
 </p>
 
 > Created by <br>
-> [Sakhaa Alsaedi](https://cemse.kaust.edu.sa/cbrc/people/person/sakhaa-alsaedi)<sup>1</sup> and [Sara Althubaiti](https://cemse.kaust.edu.sa/cs/people/person/sara-althubaiti).<sup>1</sup> <br>
+> [Sakhaa Alsaedi](https://cemse.kaust.edu.sa/cbrc/people/person/sakhaa-alsaedi)<sup>1</sup> and [Sara Althubaiti](https://cemse.kaust.edu.sa/cs/people/person/sara-althubaiti)<sup>1</sup> <br>
 > King Abdullah University of Science and Technology (KAUST)<sup>1</sup>
 
 # Scripts :space_invader:
@@ -22,3 +22,16 @@
 
 # Dependencies
 [Google Colab](https://colab.research.google.com) provides all the necessary dependencies for running the code in this repository. You do not need to install any additional packages.
+
+# Useful resources :books:
+
+# Need help?
+
+You can find us in Discord or by Email:
+
+@saraalthubaiti_80053
+sara.althubaiti@kaust.edu.sa
+
+@sakhaa_17127
+sakhaa.alsaedi@kaust.edu.sa
+
