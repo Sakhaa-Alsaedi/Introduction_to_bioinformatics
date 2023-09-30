@@ -1,4 +1,4 @@
-#########ُTask 1########
+#######Task 1#######
 
 # Open the file for reading
 file <- file('gene.fna', 'r')
@@ -24,7 +24,7 @@ close(file)
 # Print the entire gene sequence
 cat(gene_sequences, "\n")
 
-#########ُTask 2########
+#######Task 2#######
 
 find_ori_location <- function(genome) {
   ori <- "ATACAATA"
@@ -46,7 +46,7 @@ if (ori_location != -1) {
   cat("The origin of replication (ori) was not found in the genome.\n")
 }
 
-#########ُTask 3########
+#######Task 3#######
 
 # Define the DNA sequence
 dna_sequence <- gene_sequences
@@ -66,7 +66,7 @@ for (base in strsplit(dna_sequence, "")[[1]]) {
 # Print the RNA sequence
 cat(rna_sequence, "\n")
 
-#########ُTask 4########
+#######Task 4#######
 
 # Load the library for regular expressions
 # First, you need to install it using this command: install.packages('stringr')
@@ -101,7 +101,7 @@ if (length(match_positions) > 0) {
   cat(paste("The motif '", motif, "' was not found in the DNA sequence.\n", sep = ""))
 }
 
-#########ُTask 5########
+#######Task 5#######
 
 # Define the DNA sequence
 dna_sequence <- gene_sequences
@@ -114,7 +114,7 @@ gc_content <- (gc_count / sequence_length) * 100
 # Print the GC content
 cat("GC Content: ", sprintf("%.2f%%", gc_content), "\n")
 
-#########ُTask 6########
+#######Task 6#######
 
 # Define a named list for RNA to amino acid translation
 rna_codon_table <- list(
