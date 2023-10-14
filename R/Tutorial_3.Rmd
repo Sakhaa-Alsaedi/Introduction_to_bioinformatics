@@ -1,0 +1,374 @@
+---
+title: "Bulk RNA-seq coding lecture "
+author: "Robert Lehmann (modified by David Gomez-Cabrero)"
+date: "2022-12"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Overview
+
+## Lecture 1
+
+-   loading from csv
+-   generating deseq set
+-   transforming the data
+-   library size
+
+## Lecture 2
+
+-   pca, screeplot
+
+## Lecture 3
+
+-   deseq2 contrast "Th0 vs Th2" memory cells
+
+## Exercise
+
+-   Th0 vs Th2 separately for naive cells / memory cell
+-   compare DEGs for both cell types to find overlap and difference
+
+# LECTURE 1: Loading and preprocessing.
+
+## Load the libraries
+
+```{r}
+#if (!require("BiocManager", quietly = TRUE))
+#  install.packages("BiocManager")
+
+#BiocManager::install("DESeq2")
+library(DESeq2)
+
+#BiocManager::install("vsn")
+library(vsn)
+```
+
+## Loading the data
+
+The first step of every analysis is parsing the data. Here we have
+compressed tab-separate file prepared by the authors of the publication.
+We can load the gene expression matrix with a single command. In general
+it is good practise to store data in a compressed format to save storage
+space.
+
+```{r}
+ge_matrix <- read.table('NCOMMS-19-7936188_bulk_RNAseq_raw_counts.txt.gz', 
+                header = TRUE, sep = '\t')
+dim(ge_matrix)
+ge_matrix[1:4, 1:4]
+
+```
+
+## Loading the meta-data
+
+In addition to the expression data, we also need the meta data i.e.
+which samples corresponds to which phenotype, cell type.
+
+```{r}
+pheno_matrix <- read.table('NCOMMS-19-7936188_bulk_RNAseq_metadata.txt.gz', 
+                header = TRUE, sep = '\t', stringsAsFactors = TRUE)
+pheno_matrix[1:4, 1:4]
+```
+
+## Organize the data
+
+We can assign the sample names to the expression matrix rows, which
+makes it easier to keep track of data after e.g. subsetting or
+shuffling.
+
+```{r}
+rownames(pheno_matrix) <- pheno_matrix$sample_id
+
+dim(pheno_matrix)
+head(pheno_matrix)
+```
+
+We can also check that both matrices are properly aligned.
+
+```{r}
+all(rownames(pheno_matrix) == colnames(ge_matrix))
+```
+
+Now we need to select samples corresponding to the cell type and
+treatment that we want to focus on, in this case the CD4+ Memory cells
+after 5 days of treatment vs. control.
+
+```{r}
+stimTime    <- '5d'
+conditions  <- c('Th2', 'Th0')
+celltype    <- 'CD4_Memory'
+
+```
+
+We can make an index as practiced before and apply index for subsetting
+
+```{r}
+toSelect <- pheno_matrix$stimulation_time == stimTime & 
+    pheno_matrix$cytokine_condition %in% conditions &
+    pheno_matrix$cell_type == celltype
+
+pheno_matrix.subset <- pheno_matrix[toSelect, ]
+ge_matrix.subset <- ge_matrix[ , toSelect]
+```
+
+## Create a DESeq2 Object
+
+```{r}
+dds <- DESeqDataSetFromMatrix(countData = ge_matrix.subset, 
+                              colData = , pheno_matrix.subset,
+                              design = ~ cytokine_condition)
+```
+
+A commonly performed step is the filtering of genes, which have too few
+counts, e.g. less than 10 reads over all samples.
+
+```{r}
+keep <- rowSums(counts(dds)) >= 10
+dds <- dds[keep,]
+dds
+```
+
+## Investigate the data
+
+While DESeq2 operates on raw counts, visualization and downstream
+analyses often depend on data following a normal distribution. It is
+possible to apply a log-transformation on the raw data to achieve that.
+Unfortunately, the logarithm of count data tends to exhibit higher
+variance when the mean expression value is low. Let's take a look at our
+data.
+
+```{r}
+# Apply a pseudocount of 1 and apply log2
+normtfd <- normTransform(dds)
+# Compare mean to sd
+meanSdPlot(assay(normtfd))
+```
+
+## "Preprocess"
+
+Two methods are commonly used remove the dependence of the variance on
+the mean, variance stabilizing transformations (VST) (Tibshirani 1988;
+Huber et al. 2003; Anders and Huber 2010), and regularized logarithm
+(rlog), which places a prior on the sample differences (Love, Huber, and
+Anders 2014).
+
+```{r}
+# Let's calculate rlog values and take another look.
+rltfd <- rlog(dds, blind=FALSE)
+meanSdPlot(assay(rltfd))
+```
+
+## Normalization
+
+Before we can compare gene counts between samples and perform DE
+analysis, differences in sequencing depth per sample and RNA composition
+across samples need to be compensated. We don't have to compensate for
+differences in gene length, as we are only planning on comparing counts
+of the same gene across different samples so that gene length is
+constant. DESeq2 uses the median of ratios method where the counts are
+divided by sample-specific size factors determined by median ratio of
+gene counts relative to geometric mean per gene. These size factors can
+be calculated with the following function, or automatically when calling
+DESeq as shown later.
+
+```{r}
+dds <- estimateSizeFactors(dds)
+sizeFactors(dds)
+```
+
+We can compare these size factors to the total number of reads in each
+sample. Samples with more reads have larger size factors so that
+dividing the counts by the size factors accounts for the differences in
+sequencing depth between samples.
+
+```{r}
+plot(sizeFactors(dds), 
+    colSums(counts(dds, normalized=F)), 
+    xlab = 'Size factor',
+    ylab = 'Total number of reads', 
+    pch = 19)
+```
+
+# LECTURE 2: Explorative analysis.
+
+## Load the libraries
+
+```{r}
+library(DESeq2)
+```
+
+## Computing the PCA
+
+A principal component analysis is a good way to inspect similarities
+among the data, to e.g. spot strong confounding factors.
+
+PCA requires normal-distributed data. We can use the rlog function to
+transform our data by library size and apply log2 transformation. One
+way to perform the PCA is then using the function prcomp.
+
+```{r}
+rltfd.pca <- prcomp(t(assay(rltfd)), scale = TRUE)
+```
+
+## PCA analysis
+
+The first step is often to evaluate the complexity of the data, i.e. how
+much of the variance is explained by the first component, the second,
+... We can use a scree plot to visualize that.
+
+```{r}
+require(factoextra)
+fviz_eig(rltfd.pca)
+
+fviz_pca_ind(rltfd.pca)
+```
+
+Next, lets see if our samples group by sequencing batch, which would
+mean we have a technical confounding factor. Fortunately, it does not
+look like that is the case.
+
+```{r}
+plotPCA(rltfd, intgroup = 'sequencing_batch',ntop=26656)
+```
+
+```{r}
+  
+?plotPCA
+getMethod("plotPCA","DESeqTransform")
+
+```
+
+```{r}
+
+object=rltfd
+intgroup = 'sequencing_batch'
+ntop=26656  
+returnData = FALSE
+  
+      rv <- rowVars(assay(object))
+      select <- order(rv, decreasing = TRUE)[seq_len(min(ntop, 
+            length(rv)))]
+      #pca <- prcomp(t(assay(object)[, ]))
+      pca <- prcomp(t(assay(object)[, ]),scale=TRUE)
+      percentVar <- pca$sdev^2/sum(pca$sdev^2)
+      
+      if (!all(intgroup %in% names(colData(object)))) {
+            stop("the argument 'intgroup' should specify columns of colData(dds)")
+      }
+        intgroup.df <- as.data.frame(colData(object)[, intgroup, 
+            drop = FALSE])
+        group <- if (length(intgroup) > 1) {
+            factor(apply(intgroup.df, 1, paste, collapse = ":"))
+        } else {
+            colData(object)[[intgroup]]
+        }
+        d <- data.frame(PC1 = pca$x[, 1], PC2 = pca$x[, 2], group = group, 
+            intgroup.df, name = colnames(object))
+        if (returnData) {
+            attr(d, "percentVar") <- percentVar[1:2]
+            return(d)
+        }
+        ggplot(data = d, aes_string(x = "PC1", y = "PC2", color = "group")) + 
+            geom_point(size = 3) + xlab(paste0("PC1: ", round(percentVar[1] * 
+            100), "% variance")) + ylab(paste0("PC2: ", round(percentVar[2] * 
+            100), "% variance")) + coord_fixed()
+```
+
+Secondly, we can check if our samples group by treatment, which would
+mean we have a strong biological signal in our data that we can look
+forward to analyse. Interestingly, this is not the case. So we have to
+look deeper into the data.
+
+```{r}
+plotPCA(rltfd, intgroup = 'cytokine_condition')
+```
+
+# LECTURE 3: Differential Expression.
+
+## Load the libraries
+
+```{r}
+library(DESeq2)
+#BiocManager::install("EnhancedVolcano")
+library(EnhancedVolcano)
+library(pheatmap)
+```
+
+## DESeq object
+
+We can now use the DESeqDataSetFromMatrix that we have created in
+lecture 1 to create the DESeq object and run the analysis.
+
+```{r}
+dds <- DESeq(dds)
+```
+
+## Differential expression
+
+This is the long-awaited table holding the estimated base mean
+expression, log-fold change and p-value for the differential expression
+for each of our genes.
+
+```{r}
+res <- results(dds)
+
+dim(res)
+res
+```
+
+## Analysis of the outcome
+
+How many significantly differentially expressed genes do we find for the
+current contrast Th2 vs Th0 in CD4+ memory cells?
+
+```{r}
+sum(res$padj <= 0.01 & 
+      abs(res$log2FoldChange) > 1, na.rm = TRUE)
+```
+
+## Visualization 1: Volcano Plot
+
+Volcano plots are a helpful tool to visualize the log-fold changes and
+corresponding differential expression p-values
+
+```{r}
+EnhancedVolcano(res, lab = rownames(res), 
+                x = 'log2FoldChange', y = 'padj', 
+                subtitle = 'Th2 vs Th0', labSize = 3, 
+                pCutoff = 0.01,
+                FCcutoff = 1,
+                drawConnectors = TRUE)
+
+```
+
+## Visualization 2: Heatmap
+
+Lastly, it can be helpful to visualize the individual expression values
+for a set of genes of interest over the different samples. This is
+commonly done using heatmaps.
+
+First, we select our genes of interest, here the differentially
+expressed genes.
+
+```{r}
+DEG.idx <- which(res$padj <= 0.01 & 
+      abs(res$log2FoldChange) > 1)
+res[DEG.idx,]
+df <- as.data.frame(colData(dds)[,c("cytokine_condition","donor_id", "sequencing_batch")])
+
+```
+
+Secondly, we use the pheatmap function. Importantly, this function can
+perform a clustering of rows to group genes with similar expression
+patterns, as well as clustering of columns to group samples with similar
+patterns. Here, we see that samples cluster nicely by treatment
+(cytokine_condition). Also note, that the expression values are scaled
+by row, i.e.gene to compensate for differences in based expression and
+focus on expression changes between samples.
+
+```{r}
+pheatmap(assay(rltfd)[DEG.idx,], annotation_col=df,
+    treeheight_row = 0, treeheight_col = 0, scale = "row")
+```
