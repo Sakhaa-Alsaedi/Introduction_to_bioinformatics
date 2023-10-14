@@ -29,6 +29,7 @@
 - [A gentle introduction to RNA-seq](https://www.youtube.com/watch?app=desktop&v=tlf6wYJrwKY)
 - [Principal Component Analysis (PCA), Step-by-Step](https://www.youtube.com/watch?v=FgakZw6K1QQ)
 - [UMAP Dimension Reduction](https://www.youtube.com/watch?v=eN0wFzBA4Sc&t=790s)
+- [t-SNE, Clearly Explained](https://www.youtube.com/watch?v=NEaUSP4YerM&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&index=2)
 # Need help?
 
 You can find us in Discord or by Email:
