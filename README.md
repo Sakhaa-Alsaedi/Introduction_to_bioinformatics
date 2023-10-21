@@ -16,12 +16,12 @@
 
 # Scripts :space_invader:
 
-| Notebook  | Open in Colab| 
-| :---:         |     :---:      |  
-| [Tutorial 1](https://colab.research.google.com/drive/1sMmrCa1F6rQKveBAY0Zd8QsNeT0KgAQP?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1sMmrCa1F6rQKveBAY0Zd8QsNeT0KgAQP?usp=sharing)|
-| [Tutorial 2](https://colab.research.google.com/drive/1TqD6BdU6_RiXdcRSvzT3nu0abH98VLXI?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1TqD6BdU6_RiXdcRSvzT3nu0abH98VLXI?usp=sharing)|
-| [Tutorial 3](https://colab.research.google.com/drive/1LDlhbge4ulcQBUl837bbMMNPhKx2ZGZj?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1LDlhbge4ulcQBUl837bbMMNPhKx2ZGZj?usp=sharing)|
-| [Tutorial 4](https://colab.research.google.com/drive/1XZ58scoQagn9pypxyasSZSdAUsa9wP8O?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1XZ58scoQagn9pypxyasSZSdAUsa9wP8O?usp=sharing)|
+| Notebook  | Open in Colab|  Records 
+| :---:         |     :---:      |  :---:
+| [Tutorial 1](https://colab.research.google.com/drive/1sMmrCa1F6rQKveBAY0Zd8QsNeT0KgAQP?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1sMmrCa1F6rQKveBAY0Zd8QsNeT0KgAQP?usp=sharing)| [Central of dogma](https://kaust.zoom.us/rec/play/ST4s4WqmKe1gC1X8V1Ot9-3gx3fXt7ob-7obaBi3e9P3uenOTBBqTfCvbgDR_O4mSZI49j0fV8wB8iwc.mTe9jxdDqmj1aGMD?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fkaust.zoom.us%2Frec%2Fshare%2F9IOIWWwDXB_qM17FXFr3Ki67KqyLw8qpkkaWa33CYmtPsV5bAiL4s7Up58-urPC7.Lh6LY-JwChtUJWem)
+| [Tutorial 2](https://colab.research.google.com/drive/1TqD6BdU6_RiXdcRSvzT3nu0abH98VLXI?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1TqD6BdU6_RiXdcRSvzT3nu0abH98VLXI?usp=sharing)| [Genome-DNA level](https://kaust.zoom.us/rec/play/tygKzMqXWXOFFSSTBdm4YwjbETppU61WtbpY3nYZhXndEcwEq1hBnwnvkmsXf0Y8D_Y1ptbxI5rF8OXQ.hmZUOhMxF9Y0e9c-?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fkaust.zoom.us%2Frec%2Fshare%2FJWNcrdaPeuQ6YR-6chj5f3AWKOXlrPz1WbYvreeCTbLnNAQIC5plDpI6TDbLOgEj.oA22h9OE0S8AFzUf)
+| [Tutorial 3](https://colab.research.google.com/drive/1LDlhbge4ulcQBUl837bbMMNPhKx2ZGZj?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1LDlhbge4ulcQBUl837bbMMNPhKx2ZGZj?usp=sharing)|[Transcriptome-RNA level]()
+| [Tutorial 4](https://colab.research.google.com/drive/1XZ58scoQagn9pypxyasSZSdAUsa9wP8O?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1XZ58scoQagn9pypxyasSZSdAUsa9wP8O?usp=sharing)|[Protome-Amino asid level]()
 
 # Dependencies
 [Google Colab](https://colab.research.google.com) provides all the necessary dependencies for running the code in this repository. You do not need to install any additional packages.
@@ -31,8 +31,12 @@
 - [Principal Component Analysis (PCA), Step-by-Step](https://www.youtube.com/watch?v=FgakZw6K1QQ)
 - [UMAP Dimension Reduction](https://www.youtube.com/watch?v=eN0wFzBA4Sc&t=790s)
 - [t-SNE, Clearly Explained](https://www.youtube.com/watch?v=NEaUSP4YerM&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&index=2)
-# Need help?
+- [PyMol software for Protein visualization](https://pymol.org/2/)
+- [STRING database for protection Interaction Analysis](https://string-db.org/)
+- [What is a protein?](https://www.youtube.com/watch?v=wvTv8TqWC48)
 
+
+# Need help?
 You can find us in Discord or by Email:
 
 @saraalthubaiti_80053
