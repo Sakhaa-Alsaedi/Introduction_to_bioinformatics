@@ -1,3 +1,5 @@
+![istockphoto-1297657670-612x612](https://github.com/Sakhaa-Alsaedi/Introduction_to_bioinformatics/assets/42935314/b938c5b0-06cb-4607-a79d-3121245508be)
+
 <p align="center">
        <a href= "https://opensource.org/licenses/MIT">
         <img src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
