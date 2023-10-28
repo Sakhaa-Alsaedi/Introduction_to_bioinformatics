@@ -35,6 +35,10 @@
 - [PyMol software for Protein visualization](https://pymol.org/2/)
 - [STRING database for protection Interaction Analysis](https://string-db.org/)
 - [What is a protein?](https://www.youtube.com/watch?v=wvTv8TqWC48)
+- [Population and Estimated Parameters](https://www.youtube.com/watch?v=vikkiwjQqfU)
+- [Using Linear Models for t-tests and ANOVA](https://www.youtube.com/watch?v=NF5_btOaCig)
+- [What is p-values?](https://www.youtube.com/watch?v=vemZtEM63GY)
+- [Fisher's Exact Test and the Hypergeometric Distribution](https://www.youtube.com/watch?v=udyAvvaMjfM)
 
 
 # Need help?
