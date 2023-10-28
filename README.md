@@ -1,6 +1,7 @@
 ![1569966126](https://github.com/Sakhaa-Alsaedi/Introduction_to_bioinformatics/assets/42935314/45853a53-ed51-41b9-a7a7-c52fc352fe42)
 # Fundamental of Bioinformatics
-
+ <img src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
+ 
 Welcome to the Bioinformatics Fundamentals Repository! This repository contains various tutorials in Python and R to help you learn the basics of bioinformatics.
 
 
@@ -11,7 +12,7 @@ Welcome to the Bioinformatics Fundamentals Repository! This repository contains 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
 ![Colab](https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252)
- <img src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
+
 
 ## Scripts :space_invader:
 
