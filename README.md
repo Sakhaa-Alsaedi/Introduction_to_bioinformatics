@@ -1,21 +1,19 @@
 ![1569966126](https://github.com/Sakhaa-Alsaedi/Introduction_to_bioinformatics/assets/42935314/45853a53-ed51-41b9-a7a7-c52fc352fe42)
-<p align="center">
-       <a href= "https://opensource.org/licenses/MIT">
-        <img src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
+# Fundamental of Bioinformatics
 
-</p>
+Welcome to the Bioinformatics Fundamentals Repository! This repository contains various tutorials in Python and R to help you learn the basics of bioinformatics.
 
-<h1 align="center"> Fundamental of Bioinformatics </h1>
-
-<p align="center">
-  Welcome to the Bioinformatics Fundamentals Repository! This repository contains various tutorials in Python and R to help you learn the basics of bioinformatics.
-</p>
 
 > Created by <br>
 > [Sakhaa Alsaedi](https://cemse.kaust.edu.sa/cbrc/people/person/sakhaa-alsaedi)<sup>1</sup> and [Sara Althubaiti](https://cemse.kaust.edu.sa/cs/people/person/sara-althubaiti)<sup>1</sup> <br>
 > King Abdullah University of Science and Technology (KAUST)<sup>1</sup>
 
-# Scripts :space_invader:
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
+![Colab](https://img.shields.io/badge/Colab-F9AB00?style=for-the-badge&logo=googlecolab&color=525252)
+ <img src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
+
+## Scripts :space_invader:
 
 | Notebook  | Open in Colab|  Records 
 | :---:         |     :---:      |  :---:
@@ -25,10 +23,10 @@
 | [Tutorial 4](https://colab.research.google.com/drive/1XZ58scoQagn9pypxyasSZSdAUsa9wP8O?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1XZ58scoQagn9pypxyasSZSdAUsa9wP8O?usp=sharing)|[Protome-Amino asid level](https://kaust.zoom.us/rec/play/7juurDBkD1Ao0Wm6UJ_N0U7c85jlqm6UH1-931AbtiIfBSLTmDRFxSbn0_ph4RJBypHHw0rTU6bms-RG.HMHweqXzeXItVb9P?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fkaust.zoom.us%2Frec%2Fshare%2FSpNX8c-wHaJekgwJCv6UtS87oKvVm8XOpTCo9385quOb3PZFM2bdShkTTY-C6OBw.qpXCHbCQsosytBH1)
 | [Tutorial 5](https://colab.research.google.com/drive/1YYzZmlliCDgugzFW6_mJ8SMireIiT4Wm?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YYzZmlliCDgugzFW6_mJ8SMireIiT4Wm?usp=sharing)|[Python for Biostatistics](https://kaust.zoom.us/rec/play/7juurDBkD1Ao0Wm6UJ_N0U7c85jlqm6UH1-931AbtiIfBSLTmDRFxSbn0_ph4RJBypHHw0rTU6bms-RG.HMHweqXzeXItVb9P?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fkaust.zoom.us%2Frec%2Fshare%2FSpNX8c-wHaJekgwJCv6UtS87oKvVm8XOpTCo9385quOb3PZFM2bdShkTTY-C6OBw.qpXCHbCQsosytBH1)
 
-# Dependencies
+## Dependencies
 [Google Colab](https://colab.research.google.com) provides all the necessary dependencies for running the code in this repository. You do not need to install any additional packages.
 
-# Useful resources 
+#3 Useful resources 
 - [A gentle introduction to RNA-seq](https://www.youtube.com/watch?app=desktop&v=tlf6wYJrwKY)
 - [Principal Component Analysis (PCA), Step-by-Step](https://www.youtube.com/watch?v=FgakZw6K1QQ)
 - [UMAP Dimension Reduction](https://www.youtube.com/watch?v=eN0wFzBA4Sc&t=790s)
@@ -41,18 +39,15 @@
 - [What is p-values?](https://www.youtube.com/watch?v=vemZtEM63GY)
 - [Fisher's Exact Test and the Hypergeometric Distribution](https://www.youtube.com/watch?v=udyAvvaMjfM)
 
-# :books: Recommend Books 
+## :books: Recommend Books 
 - [Principles of Population Genetics 4th Edition](https://www.scribd.com/document/327383907/Principles-Population-Genetics)
 - [Genetics and Genomics in Medicine](https://moodle2.units.it/pluginfile.php/271710/mod_resource/content/1/Genetics-Genomics-Medicine.pdf)
 - [Bioinformatics Algorithms](https://compeau.cbd.cmu.edu/online-education/bioinformatics-algorithms-an-active-learning-approach/)
 
 
-# Need help?
+## Need help?
 You can find us in Discord or by Email:
 
-@saraalthubaiti_80053
-sara.althubaiti@kaust.edu.sa
-
-@sakhaa_17127
-sakhaa.alsaedi@kaust.edu.sa
+- @saraalthubaiti_80053, sara.althubaiti@kaust.edu.sa
+- @sakhaa_17127, sakhaa.alsaedi@kaust.edu.sa
 
