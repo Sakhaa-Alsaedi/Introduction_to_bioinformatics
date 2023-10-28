@@ -4,7 +4,7 @@
 
 </p>
 
-<h1 align="center">Bioinformatics Fundamentals Repository</h1>
+<h1 align="center"> Fundamental of Bioinformatics </h1>
 
 <p align="center">
   Welcome to the Bioinformatics Fundamentals Repository! This repository contains various tutorials in Python and R to help you learn the basics of bioinformatics.
