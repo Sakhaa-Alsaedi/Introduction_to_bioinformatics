@@ -40,6 +40,11 @@
 - [What is p-values?](https://www.youtube.com/watch?v=vemZtEM63GY)
 - [Fisher's Exact Test and the Hypergeometric Distribution](https://www.youtube.com/watch?v=udyAvvaMjfM)
 
+#Recommend Books 
+-[Principles of Population Genetics 4th Edition](https://www.scribd.com/document/327383907/Principles-Population-Genetics)
+-[Genetics and Genomics in Medicine](https://moodle2.units.it/pluginfile.php/271710/mod_resource/content/1/Genetics-Genomics-Medicine.pdf)
+-[Bioinformatics Algorithms](https://compeau.cbd.cmu.edu/online-education/bioinformatics-algorithms-an-active-learning-approach/)
+
 
 # Need help?
 You can find us in Discord or by Email:
