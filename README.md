@@ -26,7 +26,7 @@ Welcome to the Bioinformatics Fundamentals Repository! This repository contains 
 ## Dependencies
 [Google Colab](https://colab.research.google.com) provides all the necessary dependencies for running the code in this repository. You do not need to install any additional packages.
 
-#3 Useful resources 
+## Useful resources 
 - [A gentle introduction to RNA-seq](https://www.youtube.com/watch?app=desktop&v=tlf6wYJrwKY)
 - [Principal Component Analysis (PCA), Step-by-Step](https://www.youtube.com/watch?v=FgakZw6K1QQ)
 - [UMAP Dimension Reduction](https://www.youtube.com/watch?v=eN0wFzBA4Sc&t=790s)
