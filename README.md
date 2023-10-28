@@ -1,4 +1,4 @@
-![istockphoto-1297657670-612x612](https://github.com/Sakhaa-Alsaedi/Introduction_to_bioinformatics/assets/42935314/b938c5b0-06cb-4607-a79d-3121245508be)
+![genetics-bioinformatics-shu-571040611-8col](https://github.com/Sakhaa-Alsaedi/Introduction_to_bioinformatics/assets/42935314/68822878-e08c-4c52-ba2b-cc39afe4d23e)
 
 <p align="center">
        <a href= "https://opensource.org/licenses/MIT">
