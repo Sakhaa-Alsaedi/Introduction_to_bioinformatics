@@ -27,7 +27,7 @@
 # Dependencies
 [Google Colab](https://colab.research.google.com) provides all the necessary dependencies for running the code in this repository. You do not need to install any additional packages.
 
-# Useful resources :books:
+# Useful resources 
 - [A gentle introduction to RNA-seq](https://www.youtube.com/watch?app=desktop&v=tlf6wYJrwKY)
 - [Principal Component Analysis (PCA), Step-by-Step](https://www.youtube.com/watch?v=FgakZw6K1QQ)
 - [UMAP Dimension Reduction](https://www.youtube.com/watch?v=eN0wFzBA4Sc&t=790s)
@@ -40,7 +40,7 @@
 - [What is p-values?](https://www.youtube.com/watch?v=vemZtEM63GY)
 - [Fisher's Exact Test and the Hypergeometric Distribution](https://www.youtube.com/watch?v=udyAvvaMjfM)
 
-# Recommend Books 
+# :books: Recommend Books 
 - [Principles of Population Genetics 4th Edition](https://www.scribd.com/document/327383907/Principles-Population-Genetics)
 - [Genetics and Genomics in Medicine](https://moodle2.units.it/pluginfile.php/271710/mod_resource/content/1/Genetics-Genomics-Medicine.pdf)
 - [Bioinformatics Algorithms](https://compeau.cbd.cmu.edu/online-education/bioinformatics-algorithms-an-active-learning-approach/)
