@@ -45,7 +45,9 @@ Welcome to the Bioinformatics Fundamentals Repository! This repository contains 
 - [Genetics and Genomics in Medicine](https://moodle2.units.it/pluginfile.php/271710/mod_resource/content/1/Genetics-Genomics-Medicine.pdf)
 - [Bioinformatics Algorithms](https://compeau.cbd.cmu.edu/online-education/bioinformatics-algorithms-an-active-learning-approach/)
 
-
+## Useful videos
+- [The central dogma](https://www.youtube.com/watch?v=gG7uCskUOrA&t=1s)
+  
 ## Need help?
 You can find us in Discord or by Email:
 
